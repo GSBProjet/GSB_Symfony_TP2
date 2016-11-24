@@ -6,8 +6,10 @@
 {{parent()}}
 
      {% if app.session.get('EstDaf') == true %}
-      <h2 style="text-align: center;">     
-      <h2> Tablette de l'utilisateur </h2>
+      <h2 style="text-align: center;">   
+		{%for v in visiteur%} 
+			<h2> Tablette de l'utilisateur {{v.prenom}} {{v.nom}}</h2>
+		{%endfor%}
 
       
       <table style="border-collapse: collapse;">

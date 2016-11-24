@@ -386,6 +386,15 @@ class PdoGsb{
         $lesLignes = $stmt->fetchAll();
         return $lesLignes;
         }
+		
+		public function getVisiteurAffiche($id)
+		{
+			$req = "select * from visiteur where id =".$id ;
+			$stmt = PdoGsb::$monPdo->prepare($req);
+                $stmt->execute();
+			$lesLignes = $stmt->fetchAll();
+			return $lesLignes;
+		}
 
 
 
