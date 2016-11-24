@@ -371,7 +371,8 @@ class PdoGsb{
             return $ligne['nb'];
 
         }
-        public function getTablettes(){
+        public function getTablettes()
+		{
         $req = "select nom, prenom, id from visiteur";
         $stmt = PdoGsb::$monPdo->prepare($req);
                 $stmt->execute();
@@ -379,7 +380,8 @@ class PdoGsb{
         return $lesLignes;
         }
 
-        public function getAffectationsTablettes($id){
+        public function getAffectationsTablettes($id)
+		{
         $req = "select * from tablette where refVisiteur =".$id ;
         $stmt = PdoGsb::$monPdo->prepare($req);
                 $stmt->execute();

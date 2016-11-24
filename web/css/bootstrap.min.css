@@ -45,9 +45,6 @@
   position:relative;
   top:1px;
 }
-body{
-	background-image:url(../images/Back.png)
-}
 .form-container {
    border: 1px solid #f2e3d2;
    background: #c9b7a2;
