@@ -11,7 +11,7 @@
 			<h2> Tablette de l'utilisateur {{v.prenom}} {{v.nom}}</h2>
 		{%endfor%}
 
-      <form class="form-container">
+      
       <table style="border-collapse: collapse;">
         <tr style="{border: 1px solid black;}"> 
 
@@ -21,28 +21,22 @@
                      <th style="border: 1px solid black;" >Date Affectation</th>
 
        </tr>
-
-       {%for t in tablette%} 
-
-
-  
-      
-
-<td style="border: 1px solid black;">{{t.typeOS}}</td>
-       <td style="border: 1px solid black;">{{t.memoireExt}}</td>
-       <td style="border: 1px solid black;">{{t.memoireInt}}</td>
-       <td style="border: 1px solid black;">{{t.dateAffectation}}</td>
-   
-
-       </br>
-   </tr>
-   {% endfor %}
-
+	   
+	   {%if tablette == null %}
+			Cet utilisateur n'a pas de tablettes.
+	   {%else%}
+		
+		   {%for t in tablette%} 
+			<td style="border: 1px solid black;">{{t.typeOS}}</td>
+				<td style="border: 1px solid black;">{{t.memoireExt}}</td>
+				<td style="border: 1px solid black;">{{t.memoireInt}}</td>
+				<td style="border: 1px solid black;">{{t.dateAffectation}}</td>
+		   </br>
+	   </tr>
+	   {% endfor %}
+   {%endif%}
 </table>
 </h2>
-</form>
-</br>
-<a href="{{path('pg_gsb_frais_daf')}}" class="myButton">Retour</a>
 
 
 {%endif%}
