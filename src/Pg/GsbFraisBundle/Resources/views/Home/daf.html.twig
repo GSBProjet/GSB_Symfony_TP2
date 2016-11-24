@@ -8,8 +8,8 @@
      {% if app.session.get('EstDaf') == true %}
       <h2 style="text-align: center;">     
       <h2> Liste des différents Visiteurs </h2>
-
       
+      <form class="form-container" style="text-align: center;">
       <table style="border-collapse: collapse;">
         <tr style="{border: 1px solid black;}">      
        <th style="border: 1px solid black;" >Nom de l'utilisateur</th>
@@ -29,6 +29,7 @@
    {% endfor %}
 </table>
 </h2>
+</form>
 
 
 {%endif%}
