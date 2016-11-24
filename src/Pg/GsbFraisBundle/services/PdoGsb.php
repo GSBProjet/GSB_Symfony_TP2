@@ -380,7 +380,7 @@ class PdoGsb{
         }
 
         public function getAffectationsTablettes($id){
-        $req = "select * from tablette where idTablette =".$id ;
+        $req = "select * from tablette where refVisiteur =".$id ;
         $stmt = PdoGsb::$monPdo->prepare($req);
                 $stmt->execute();
         $lesLignes = $stmt->fetchAll();
