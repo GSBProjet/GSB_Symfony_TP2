@@ -5,6 +5,7 @@
 
 {{parent()}}
 
+{%if tablette != null %}
      {% if app.session.get('EstDaf') == true %}
       <h2 style="text-align: center;">   
 		{%for v in visiteur%} 
@@ -19,11 +20,11 @@
        <th style="border: 1px solid black;" >Memoire Externe</th>
               <th style="border: 1px solid black;" >Memoire Interne</th>
                      <th style="border: 1px solid black;" >Date Affectation</th>
-
+{% endif %}
        </tr>
-	   
 	   {%if tablette == null %}
-			Cet utilisateur n'a pas de tablettes.
+	   
+			Cet utilisateur n'a aucune de tablettes.
 	   {%else%}
 		
 		   {%for t in tablette%} 
