@@ -1,0 +1,50 @@
+{% extends "PgGsbFraisBundle::accueil.html.twig" %}
+{% block menu %}
+
+
+
+{{parent()}}
+
+     {% if app.session.get('EstDaf') == true %}
+      <h2 style="text-align: center;">   
+		{%for v in visiteur%} 
+			<h2> Tablette de l'utilisateur {{v.prenom}} {{v.nom}}</h2>
+		{%endfor%}
+
+      
+      <table style="border-collapse: collapse;">
+        <tr style="{border: 1px solid black;}"> 
+
+                      <th style="border: 1px solid black;" >Type OS</th>   
+       <th style="border: 1px solid black;" >Memoire Externe</th>
+              <th style="border: 1px solid black;" >Memoire Interne</th>
+                     <th style="border: 1px solid black;" >Date Affectation</th>
+
+       </tr>
+	   
+	   {%if tablette == null %}
+			Cet utilisateur n'a pas de tablettes.
+	   {%else%}
+		
+		   {%for t in tablette%} 
+			<td style="border: 1px solid black;">{{t.typeOS}}</td>
+				<td style="border: 1px solid black;">{{t.memoireExt}}</td>
+				<td style="border: 1px solid black;">{{t.memoireInt}}</td>
+				<td style="border: 1px solid black;">{{t.dateAffectation}}</td>
+		   </br>
+	   </tr>
+	   {% endfor %}
+   {%endif%}
+</table>
+</h2>
+
+
+{%endif%}
+
+
+       
+       
+     </div> 
+
+{% endblock %}
+
